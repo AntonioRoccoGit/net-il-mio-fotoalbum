@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+
 html {
   font-size: 14px;
 }
@@ -17,6 +23,55 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+
+
+/************************************LAYOUT*/
+.mc-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.body {
+    overflow-y: auto;
+    padding-top: var(--nav-height);
+    padding-bottom: var(--footer-Height);
+    height: 100%;
+}
+
+.ms_container {
+    padding-top: 3rem;
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+/**********************************HEADER*/
+header {
+    height: var(--nav-height);
+    margin: 0;
+    padding: 0;
+}
+
+.header_nav {
+    height: 100%;
+}
+
+
+/***********************************FOOTER*/
+footer {
+    height: var(--footer-height);
+}
+
+footer h5 {
+    line-height: var(--footer-height);
+    margin: 0;
+}
+
+
+/*************************************ROOT*/
+:root {
+    --nav-height: 90px;
+    --footer-height: 80px;
 }

@@ -1,8 +1,19 @@
-﻿@{
+﻿@using net_il_mio_fotoalbum.Models.Db
+@{
     ViewData["Title"] = "Home Page";
 }
+@model List<Photo>
 
+@section Style{
+    <link rel="stylesheet" href="~/css/home/index.css" asp-append-version="true" />
+}
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 text-primary">
+        Benvenuto in foto album
+    </h1>
+
+    @foreach (var item in Model)
+    {
+        @item.Title <br>
+    }
 </div>
