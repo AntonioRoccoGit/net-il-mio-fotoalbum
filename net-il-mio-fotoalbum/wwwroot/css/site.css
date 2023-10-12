@@ -34,10 +34,8 @@ html {
 }
 
 .body {
-    overflow-y: auto;
     padding-top: var(--nav-height);
     padding-bottom: var(--footer-Height);
-    height: 100%;
 }
 
 .ms_container {
@@ -67,6 +65,13 @@ footer {
 footer h5 {
     line-height: var(--footer-height);
     margin: 0;
+}
+
+
+/*************************************UTILITY*/
+
+.ms_content-box {
+    cursor: context-menu;
 }
 
 

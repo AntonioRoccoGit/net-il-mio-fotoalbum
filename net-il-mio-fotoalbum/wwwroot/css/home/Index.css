@@ -1,1 +1,12 @@
-﻿
+﻿h2.photo-section{
+    padding-top: 6rem;
+}
+
+.home-card{
+    animation-delay: 4s;
+
+}
+
+.home-card:hover {
+    background-color: lightgreen;
+}

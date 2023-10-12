@@ -17,7 +17,7 @@
         @await Html.PartialAsync("_NavBar")
 
         <div class="body px-5">
-            <div class="ms_container">
+            <div class="ms_container h-100">
                 <main role="main">
                     @RenderBody()
                 </main>
@@ -37,7 +37,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-<style>
-
-</style>
