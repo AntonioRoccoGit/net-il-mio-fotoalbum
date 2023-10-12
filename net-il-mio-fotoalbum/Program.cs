@@ -4,6 +4,7 @@ using net_il_mio_fotoalbum.Database;
 using net_il_mio_fotoalbum.Interface;
 using net_il_mio_fotoalbum.Models.Db;
 using net_il_mio_fotoalbum.Services;
+using System.Text.Json.Serialization;
 
 namespace net_il_mio_fotoalbum
 {
@@ -23,6 +24,10 @@ namespace net_il_mio_fotoalbum
             //Injection
             builder.Services.AddScoped<IRepository<Photo>, CrudHelper<Photo, PhotoContext>>();
             builder.Services.AddScoped<IRepository<Category>, CrudHelper<Category, PhotoContext>>();
+            builder.Services.AddScoped<IRepository<Message>, CrudHelper<Message, PhotoContext>>();
+
+
+            builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
             var app = builder.Build();
 

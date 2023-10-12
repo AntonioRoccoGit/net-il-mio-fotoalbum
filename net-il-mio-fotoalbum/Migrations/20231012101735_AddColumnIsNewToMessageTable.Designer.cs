@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using net_il_mio_fotoalbum.Database;
 
@@ -11,9 +12,11 @@ using net_il_mio_fotoalbum.Database;
 namespace net_il_mio_fotoalbum.Migrations
 {
     [DbContext(typeof(PhotoContext))]
-    partial class PhotoContextModelSnapshot : ModelSnapshot
+    [Migration("20231012101735_AddColumnIsNewToMessageTable")]
+    partial class AddColumnIsNewToMessageTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -270,7 +273,7 @@ namespace net_il_mio_fotoalbum.Migrations
 
                     b.Property<bool?>("IsNew")
                         .HasColumnType("bit")
-                        .HasColumnName("is_new");
+                        .HasColumnName("isNew");
 
                     b.Property<string>("Text")
                         .IsRequired()

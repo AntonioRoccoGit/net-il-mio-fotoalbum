@@ -86,20 +86,20 @@
 
             <form class="ms_container-small border border-3 p-5 " style="aspect-ratio: 6/3">
 
+                
                 <div class="row g-3">
                     <div class="col-4">
-                        <label for="name">Inserisci la tua email</label>
-                        <input id="name" type="text" class="form-control" placeholder="email@prova.com" aria-label="name">
+                        <label for="email">Inserisci la tua email</label>
+                        <input id="email" type="text" class="form-control" placeholder="email@prova.com" aria-label="name">
                     </div>
                     <div class="col-7">
 
                         <label class="d-block" for="message">Cosa vuoi chiedere?</label>
-                        <textarea rows="8" class="form-control">
-
-                        </textarea>
+                        <textarea id="user-message" rows="8" class="form-control"></textarea>
                     </div>
                     <div class="col-12 text-start">
-                        <button class="btn btn-primary">Invio</button>
+                        <button id="btn-message" class="btn btn-primary">Invio</button>
+                        <span id="notify" class="ms-5 d-none">Messaggio inviato con successo!</span>
                     </div>
                 </div>
             </form>
@@ -108,3 +108,7 @@
 
     </div>
 </div>
+@section Scripts{
+        <script src="/js/Home/formMessage.js" ></script>
+
+}
