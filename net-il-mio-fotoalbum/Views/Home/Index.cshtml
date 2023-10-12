@@ -21,7 +21,7 @@
                         La nostra causa
                     </h3>
                     <span class="text-primary fs-5">
-                        Non hai un lavoro?, sei annoitato e pieno di immagini sul telefonino? <br />
+                        Non hai un lavoro?, sei annoiato e pieno di immagini sul telefonino? <br />
                         E allora cosa aspetti a condividerle con i tuoi amici?
 
                     </span>
@@ -47,14 +47,20 @@
         <h2 class="photo-section fs-1 display-4 fw-bold text-info col-12 ms_text-outer">
             Dai un occhiata alle foto
         </h2>
+
+        <!--CALL TO ACTION-->
+        <div class="p-5 w-50 m-auto">
+            <input id="search-name" class="form-control" type="text" placeholder="Cosa vorresti guardare?">
+        </div>
+
         
         <!-- USER'S PHOTO SECTION -->
-        <section class="row row-cols-3 gy-4">
+        <section id="photo-section" class="row row-cols-3 gy-4">
             @foreach (var item in Model)
             {
                 <div class="p-3">
 
-                    <div class="card-photo card col" style="aspect-ratio: 4/5">
+                    <div class="card-photo card col h-100">
                         <img src="https://picsum.photos/seed/picsum/200/300" style="aspect-ratio:3/2" class="card-img-top" alt="@item.Title">
                         <div class="card-body d-flex flex-column align-items-center">
                             <h5 class="card-title">@item.Title</h5>
@@ -109,6 +115,7 @@
     </div>
 </div>
 @section Scripts{
-        <script src="/js/Home/formMessage.js" ></script>
+    <script src="/js/Home/formMessage.js"></script>
+    <script src="/js/Home/searchPhotoName.js"></script>
 
 }

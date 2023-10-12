@@ -32,6 +32,9 @@ btnMessage.addEventListener("click", (btn) => {
             notify.classList.remove("text-danger");
             notify.classList.add("text-primary");
             notify.classList.remove("d-none");
-        });
-
+        }).finally(
+            setTimeout(function () {
+                notify.classList.add("d-none");
+            }, 3000)
+        );
 });

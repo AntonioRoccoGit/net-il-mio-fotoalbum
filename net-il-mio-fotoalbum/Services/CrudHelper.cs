@@ -33,8 +33,8 @@ namespace net_il_mio_fotoalbum.Services
 
         public List<T> SearchAndIncludeList(Expression<Func<T, bool>> where, Expression<Func<T, object>> include)
         {
-            List<T> item = _dbSet.Where(where).Include(include).ToList();
-            return item;
+            List<T> items = _dbSet.Where(where).Include(include).ToList();
+            return items;
         }
 
 
