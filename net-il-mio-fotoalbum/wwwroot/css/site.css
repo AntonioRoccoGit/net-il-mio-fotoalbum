@@ -45,6 +45,12 @@ html {
     max-width: 1300px;
 }
 
+.ms_container-small {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
 /**********************************HEADER*/
 header {
     height: var(--nav-height);
@@ -74,6 +80,10 @@ footer h5 {
     cursor: context-menu;
 }
 
+.ms_text-outer {
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px
+}
 
 /*************************************ROOT*/
 :root {

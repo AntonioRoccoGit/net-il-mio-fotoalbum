@@ -10,3 +10,9 @@
 .home-card:hover {
     background-color: lightgreen;
 }
+
+.card-photo {
+    overflow:hidden;
+    border-radius:1rem;
+    box-shadow: 19px 23px 12px 0px rgba(0,0,0,0.2);
+}
