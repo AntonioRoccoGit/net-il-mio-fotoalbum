@@ -16,11 +16,11 @@
                 <h1 class="display-4 fw-bold text-info col-12 ms_text-outer">
                     Benvenuto in foto album
                 </h1>
-                <div class="home-card col-4 offset-1  p-3 border border-3 rounded-3 border-info">
+                <div class="col-4 offset-1  p-3 border-info home-card">
                     <h3 class=" text-body fw-bold">
                         La nostra causa
                     </h3>
-                    <span class="text-primary fs-5">
+                    <span class="fs-5">
                         Non hai un lavoro?, sei annoiato e pieno di immagini sul telefonino? <br />
                         E allora cosa aspetti a condividerle con i tuoi amici?
 
@@ -28,11 +28,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="home-card col-4 offset-6 p-3 border border-3 rounded-3 border-info">
+                <div class="col-4 offset-6 p-3 border-info home-card">
                     <h3 class=" text-body fw-bold">
                         Resta aggiornato
                     </h3>
-                    <span class="text-primary fs-5">
+                    <span class="fs-5">
                         Non perderti i momenti piu belli condivisi dagli utenti <br />
                         E allora cosa aspetti a condividerle con i tuoi amici?
 
@@ -58,7 +58,7 @@
         <section id="photo-section" class="row row-cols-3 gy-4">
             @foreach (var item in Model)
             {
-                <div class="p-3">
+                <div class="p-4">
 
                     <div class="card-photo card col h-100">
                         <img src="https://picsum.photos/seed/picsum/200/300" style="aspect-ratio:3/2" class="card-img-top" alt="@item.Title">
@@ -90,7 +90,7 @@
                 Hai dubbi o domande? Contattaci!!
             </h2>
 
-            <form class="ms_container-small border border-3 p-5 " style="aspect-ratio: 6/3">
+            <form id="section-contact-form" class="ms_container-small border border-3 p-5 " style="aspect-ratio: 6/3">
 
                 
                 <div class="row g-3">

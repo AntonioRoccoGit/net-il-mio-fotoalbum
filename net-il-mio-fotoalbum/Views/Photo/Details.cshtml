@@ -1,0 +1,29 @@
+﻿@using net_il_mio_fotoalbum.Models.Db;
+@model Photo
+<h2 class="text-primary">Ecco i dettagli di: @Model.Title</h2>
+<div class="p-4">
+
+    <div class="card-photo w-25 m-auto">
+        <div class="card" style="width: 35vw;">
+            <img src="https://picsum.photos/seed/picsum/200/300" style="aspect-ratio: 3/2" class="card-img-top w-100" alt="@Model.Title">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <section class="flex-grow-1 p-3">
+                    <span class="fw-bold">Descrizione:</span>
+                    @if (Model.Description?.Count() > 0)
+                    {
+                        <p class="card-text">@Model.Description</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">Non disponibile</p>
+                    }
+
+                </section>
+                <p class="card-text">TO DO Gategorie.</p>
+                <a asp-controller="Photo" asp-action="Index" class="btn btn-primary"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@using net_il_mio_fotoalbum.Models.Db;
+@model List<Photo>
+
+<h2>Ecco la tua pagina di amministrazione</h2>
+<!-- TABLE -->
+<section class="p-5">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th scope="col">Thumbnail</th>
+                <th scope="col">Titolo</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Azioni</th>
+                <th scope="col">Visibile</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr class="text-start">
+                    <td scope="row">
+                        <img style="aspect-ratio: 3/2;" class="w-25" src="https://picsum.photos/seed/picsum/200/300" />
+                    </td>
+                    <td>@item.Title</td>
+                    <td>
+                        @(item.Description ?? "Nessuna descrizione disponibile")
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-evenly">
+                            <a asp-controller="Photo" asp-action="Details" asp-route-id="@item.Id" class="h-100 btn btn-success">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a asp-controller="Photo" asp-action="Edit" asp-route-id="@item.Id" class="h-100 btn btn-warning">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                            <form asp-controller="Photo" asp-action="Delete" asp-route-id="@item.Id">
+                                @Html.AntiForgeryToken()
+                                <button class="btn btn-danger" type="submit">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <form asp-controller="Photo" asp-action="EditVisible" asp-route-id="@item.Id">
+                            @Html.AntiForgeryToken()
+                            <button class="btn btn-outline-dark" type="submit">
+                                @(item.Visible == true ? "Si" : "No")
+                            </button>
+                        </form>
+                        
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+<!-- /TABLE -->

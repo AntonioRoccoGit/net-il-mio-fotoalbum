@@ -1,18 +1,39 @@
-﻿h2.photo-section{
+﻿h2.photo-section {
     padding-top: 6rem;
 }
 
-.home-card{
-    animation-delay: 4s;
-
+.home-card {
+    color:black;
+    transition: background-color 1s ease, border-radius 1.2s ease, color 0.6s ease;
 }
 
-.home-card:hover {
-    background-color: lightgreen;
-}
+    .home-card:hover {
+        background-color: #07b5d8d4;
+        color: white;
+        border-radius: 30px;
+        transition: background-color 1s ease,border-radius 1.2s ease, color 0.6s ease-out;
+    }
 
 .card-photo {
-    overflow:hidden;
-    border-radius:1rem;
+    overflow: hidden;
+    border-radius: 1rem;
     box-shadow: 19px 23px 12px 0px rgba(0,0,0,0.2);
+    transition: box-shadow 0.6s ease;
 }
+
+
+    .card-photo:hover {
+        box-shadow: -3px 21px 15px 10px rgba(0,0,0,0.2);
+        transition: box-shadow 0.6s ease;
+    }
+
+#section-contact-form {
+    border-radius: 20px;
+    box-shadow: 0;
+    transition: box-shadow 1.4s ease;
+}
+
+    #section-contact-form:hover {
+        box-shadow: -3px 21px 15px 10px rgba(0,0,0,0.2);
+        transition: box-shadow 0.9s ease;
+    }

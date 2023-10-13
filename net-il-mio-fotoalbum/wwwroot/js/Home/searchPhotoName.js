@@ -26,8 +26,7 @@ search.addEventListener("keyup", () => {
                             <section class="flex-grow-1 p-3">
                                 <span class="fw-bold">Descrizione:</span>
 
-                                <p class="card-text">${haveDesctiption(item)}</p>
-                                
+                                <p class="card-text">${(item.description ?? "Nessuna descrizione")}</p>
 
                             </section>
                             
@@ -42,10 +41,3 @@ search.addEventListener("keyup", () => {
 
     }, 1000);
 });
-
-
-function haveDesctiption(item) {
-    if (item.description != null && item.description != "")
-        return item.description
-    return "Non disponibile";
-}

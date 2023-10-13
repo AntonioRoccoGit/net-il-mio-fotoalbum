@@ -68,8 +68,13 @@ namespace net_il_mio_fotoalbum.Services
 
         public bool Update(T entity)
         {
-
-            return true;
+            try
+            {
+                _dbSet.Update(entity);
+                _context.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
     }
 }

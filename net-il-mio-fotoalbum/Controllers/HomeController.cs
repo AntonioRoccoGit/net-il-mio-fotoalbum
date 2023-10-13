@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using net_il_mio_fotoalbum.Interface;
 using net_il_mio_fotoalbum.Models;
 using net_il_mio_fotoalbum.Models.Db;
@@ -23,6 +24,7 @@ namespace net_il_mio_fotoalbum.Controllers
         {
 
             List<Photo> list = _crudPhoto.SearchAndIncludeList(p => p.Visible == true, p => p.Categories);
+
             return View(list);
         }
 

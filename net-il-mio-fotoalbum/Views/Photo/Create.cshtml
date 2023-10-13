@@ -1,0 +1,45 @@
+﻿@using net_il_mio_fotoalbum.Models.Form;
+@model PhotoForm
+
+
+<form class="w-25 mt-5 d-flex flex-column m-auto" asp-controller="Photo" enctype="multipart/form-data" asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div>
+        <label asp-for="Photo.Title">Nome:</label>
+        <input type="text" asp-for="Photo.Title" class="d-block w-100" id="Title" />
+        <span asp-validation-for="Photo.Title" class="text-danger"></span>
+    </div>
+  
+    <span asp-for="Photo.Categories">Categorie:</span>
+    <div class="mb-3 d-flex flex-wrap gap-2">
+        
+        @if (Model.Categories != null)
+        {
+            foreach(var category in Model.Categories)
+            {
+                    <input id="@category.Name" class="btn-check" type="checkbox" name="CategoriesId" value="@category.Id" />
+                    <label for="@category.Name" class="btn">@category.Name</label>
+                
+            }
+        }
+        else
+        {
+            <option value="">Categorie non disponibili</option>
+        }
+        <span asp-validation-for="Photo.Categories" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Photo.Description">Inserisci una descrizione:</label>
+        <textarea asp-for="Photo.Description" class="d-block w-100" rows="5"></textarea>
+        <span asp-validation-for="Photo.Description" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="ImageFormFile">Carica la tua immagine</label>
+        <input type="file" asp-for="ImageFormFile" class="d-block w-100" />
+        <span asp-validation-for="ImageFormFile" class="text-danger"></span>
+    </div>
+    <div class="text-end">
+        <button type="submit" class="btn btn-small btn-info">Aggiungi</button>
+    </div>
+</form>
