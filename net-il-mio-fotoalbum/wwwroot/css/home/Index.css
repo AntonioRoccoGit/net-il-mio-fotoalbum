@@ -2,38 +2,24 @@
     padding-top: 6rem;
 }
 
-.home-card {
-    color:black;
-    transition: background-color 1s ease, border-radius 1.2s ease, color 0.6s ease;
-}
-
-    .home-card:hover {
-        background-color: #07b5d8d4;
-        color: white;
+    .home-card{
         border-radius: 30px;
-        transition: background-color 1s ease,border-radius 1.2s ease, color 0.6s ease-out;
+        border: 1px solid;
     }
 
 .card-photo {
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow: 19px 23px 12px 0px rgba(0,0,0,0.2);
-    transition: box-shadow 0.6s ease;
 }
 
 
-    .card-photo:hover {
-        box-shadow: -3px 21px 15px 10px rgba(0,0,0,0.2);
-        transition: box-shadow 0.6s ease;
-    }
-
-#section-contact-form {
+.shadow-3d {
     border-radius: 20px;
     box-shadow: 0;
     transition: box-shadow 1.4s ease;
 }
 
-    #section-contact-form:hover {
+    .shadow-3d:hover {
         box-shadow: -3px 21px 15px 10px rgba(0,0,0,0.2);
         transition: box-shadow 0.9s ease;
     }

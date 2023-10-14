@@ -3,9 +3,9 @@
 <h2 class="text-primary">Ecco i dettagli di: @Model.Title</h2>
 <div class="p-4">
 
-    <div class="card-photo w-25 m-auto">
+    <div class="card-photo w-55 m-auto d-flex justify-content-center">
         <div class="card" style="width: 35vw;">
-            <img src="https://picsum.photos/seed/picsum/200/300" style="aspect-ratio: 3/2" class="card-img-top w-100" alt="@Model.Title">
+            <img src="@Model.ImageUrl" style="aspect-ratio: 3/2" class="card-img-top w-100" alt="@Model.Title">
             <div class="card-body">
                 <h5 class="card-title">@Model.Title</h5>
                 <section class="flex-grow-1 p-3">
@@ -21,7 +21,21 @@
 
                 </section>
                 <p class="card-text">TO DO Gategorie.</p>
-                <a asp-controller="Photo" asp-action="Index" class="btn btn-primary"><i class="fa-solid fa-arrow-left-long"></i></a>
+                <!-- CALL TO ACTION -->
+                <div class="d-flex">
+                    <a asp-controller="Photo" asp-action="Index" class="btn btn-primary"><i class="fa-solid fa-arrow-left-long"></i></a>
+                    <a asp-controller="Photo" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning ms-auto">
+                        <i class="fa-solid fa-pencil"></i>
+                    </a>
+
+                    <form class="ms-3" asp-controller="Photo" asp-action="Delete" asp-route-id="@Model.Id">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-danger" type="submit">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
+                <!-- /CALL TO ACTION -->
             </div>
         </div>
         
