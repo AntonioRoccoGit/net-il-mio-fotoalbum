@@ -53,37 +53,39 @@
             <input id="search-name" class="form-control" type="text" placeholder="Cosa vorresti guardare?">
         </div>
 
-        
+
         <!-- USER'S PHOTO SECTION -->
         <section id="photo-section" class="row row-cols-3 gy-4">
             @foreach (var item in Model)
             {
                 <div class="p-4">
+                    <a asp-controller="Photo" asp-action="Details" asp-route-id="@item.Id" class="m-0 p-0">
 
-                    <div class="card-photo card col h-100 shadow-3d p-4">
-                        <img src="@item.ImageUrl" style="aspect-ratio:3/2" class="card-img-top" alt="@item.Title">
-                        <div class="card-body d-flex flex-column align-items-center">
-                            <h5 class="card-title">@item.Title</h5>
-                            <section class="flex-grow-1 p-3">
-                                <span class="fw-bold">Descrizione:</span>
-                                @if(item.Description?.Count() > 0)
-                                {
-                                    <p class="card-text">@item.Description</p>
-                                }else
-                                {
-                                    <p class="card-text">Non disponibile</p>
-                                }
+                        <div class="card-photo card col h-100 shadow-3d p-4">
+                            <img src="@item.ImageUrl" style="aspect-ratio:3/2" class="card-img-top" alt="@item.Title">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <h5 class="card-title">@item.Title</h5>
+                                <section class="flex-grow-1 p-3">
+                                    <span class="fw-bold">Descrizione:</span>
+                                    @if (item.Description?.Count() > 0)
+                                    {
+                                        <p class="card-text">@item.Description</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="card-text">Non disponibile</p>
+                                    }
 
-                            </section>
-                            
+                                </section>
+
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             }
 
         </section>
         <!-- /USER'S PHOTO SECTION -->
-
         <!-- CONTACT FORM -->
         <section>
             <h2 class="photo-section fs-3 mb-4 display-4 fw-bold text-info col-12 ms_text-outer">
@@ -92,7 +94,7 @@
 
             <form class="ms_container-small border border-3 p-5 shadow-3d" style="aspect-ratio: 6/3">
 
-                
+
                 <div class="row g-3">
                     <div class="col-4">
                         <label for="email">Inserisci la tua email</label>

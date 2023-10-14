@@ -7,11 +7,11 @@
     <table class="table text-start">
         <thead>
             <tr>
-                <th scope="col">Thumbnail</th>
-                <th scope="col">Titolo</th>
-                <th scope="col">Descrizione</th>
-                <th scope="col">Azioni</th>
-                <th scope="col">Visibile</th>
+                <th scope="col" class="col-3">Thumbnail</th>
+                <th scope="col" class="col-2">Titolo</th>
+                <th scope="col" class="col-3">Descrizione</th>
+                <th scope="col" class="col-3">Azioni</th>
+                <th scope="col" class="col-1">Visibile</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
                             <a asp-controller="Photo" asp-action="Details" asp-route-id="@item.Id" class="h-100 btn btn-success">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
-                            <a asp-controller="Photo" asp-action="Edit" asp-route-id="@item.Id" class="h-100 btn btn-warning">
+                            <a asp-controller="Photo" asp-action="Update" asp-route-id="@item.Id" class="h-100 btn btn-warning">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
                             <form asp-controller="Photo" asp-action="Delete" asp-route-id="@item.Id">

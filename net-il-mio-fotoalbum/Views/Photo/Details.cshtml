@@ -21,23 +21,32 @@
 
                 </section>
                 <p class="card-text">TO DO Gategorie.</p>
-                <!-- CALL TO ACTION -->
-                <div class="d-flex">
-                    <a asp-controller="Photo" asp-action="Index" class="btn btn-primary"><i class="fa-solid fa-arrow-left-long"></i></a>
-                    <a asp-controller="Photo" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning ms-auto">
-                        <i class="fa-solid fa-pencil"></i>
-                    </a>
 
-                    <form class="ms-3" asp-controller="Photo" asp-action="Delete" asp-route-id="@Model.Id">
-                        @Html.AntiForgeryToken()
-                        <button class="btn btn-danger" type="submit">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </form>
+                <!-- CALL TO ACTION -->
+
+
+                <div class="d-flex">
+                    @if (User.IsInRole("ADMIN"))
+                    {
+                        <a asp-controller="Photo" asp-action="Index" class="btn btn-primary"><i class="fa-solid fa-arrow-left-long"></i></a>
+                        <a asp-controller="Photo" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning ms-auto">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+
+                        <form class="ms-3" asp-controller="Photo" asp-action="Delete" asp-route-id="@Model.Id">
+                            @Html.AntiForgeryToken()
+                            <button class="btn btn-danger" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    }else{
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary"><i class="fa-solid fa-arrow-left-long"></i></a>
+
+                    }
                 </div>
                 <!-- /CALL TO ACTION -->
             </div>
         </div>
-        
+
     </div>
 </div>

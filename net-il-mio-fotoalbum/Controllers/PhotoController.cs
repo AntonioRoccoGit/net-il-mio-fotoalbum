@@ -7,7 +7,6 @@ using net_il_mio_fotoalbum.Models.Form;
 
 namespace net_il_mio_fotoalbum.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
     public class PhotoController : Controller
     {
         private readonly IRepository<Photo> _crudPhoto;
@@ -18,6 +17,7 @@ namespace net_il_mio_fotoalbum.Controllers
             _crudCategory = crudCategory;
         }
 
+        [Authorize(Roles = "ADMIN")]
         [HttpGet]
         public IActionResult Index()
         {
@@ -34,6 +34,7 @@ namespace net_il_mio_fotoalbum.Controllers
             return View(photo);
         }
 
+        [Authorize(Roles = "ADMIN")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -43,6 +44,7 @@ namespace net_il_mio_fotoalbum.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
         public IActionResult Create(PhotoForm model)
         {
@@ -73,7 +75,18 @@ namespace net_il_mio_fotoalbum.Controllers
             return RedirectToAction("index");
         }
 
+        [Authorize(Roles = "ADMIN")]
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            PhotoForm model = new();
+            model.Categories = _crudCategory.GetAll().ToList();
+            model.Photo = _crudPhoto.GetById(id);
 
+            return View(model);
+        }
+
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
         public IActionResult EditVisible(int id) 
         {
@@ -88,6 +101,7 @@ namespace net_il_mio_fotoalbum.Controllers
             return RedirectToAction("index");
         }
 
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
         public IActionResult Delete(int id)
         {
