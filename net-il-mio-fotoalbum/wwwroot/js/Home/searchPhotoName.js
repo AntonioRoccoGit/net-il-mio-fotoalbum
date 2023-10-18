@@ -20,7 +20,7 @@ search.addEventListener("keyup", () => {
                 <div class="p-3">
 
                     <div class="card-photo card col h-100">
-                        <img src="https://picsum.photos/seed/picsum/200/300" style="aspect-ratio:3/2" class="card-img-top" alt="${item.title}">
+                        <img src="${image(item.imageFile)}" style="aspect-ratio:3/2" class="card-img-top" alt="${item.title}">
                         <div class="card-body d-flex flex-column align-items-center">
                             <h5 class="card-title">${item.title}</h5>
                             <section class="flex-grow-1 p-3">
@@ -41,3 +41,10 @@ search.addEventListener("keyup", () => {
 
     }, 1000);
 });
+
+//HELPERS
+
+function image(itemImage) {
+
+    return itemImage ? "data:image/png;base64," + itemImage : "https://www.technol.si/wp-content/uploads/2018/11/default-image1.jpg";
+}
